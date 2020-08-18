@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @chef = User.find(params[:id])
+    # @chef = User.find(params[:id])
   end
 
 end
