@@ -1,4 +1,25 @@
+<div class='container'>
 
-<h1> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %> </h1>
-<h2><%= @chef.email %> <%= '📧' %></h2>
-<%= link_to 'Go back to homepage', users_path %>
+<h1> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, welcome to my cuisine</h1>
+
+
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div class='description'>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+        <h2><%= @chef.email %><%= '📧' %></h2>
+    </div>
+  </div>
+<div class='bookbutton'>
+  <%= link_to "Book Me", user_path, class: 'btn btn-danger' %>
+  </div>
+
+<div class='home'>
+  <%= link_to 'Go back to homepage', users_path, class: 'btn btn-primary'%>
+</div>
+</div>
+
+
+</div>
