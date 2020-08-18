@@ -1,0 +1,130 @@
+.title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.banner {
+  height: calc(80vh);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('bannerpic.jpg');
+  background-size: cover;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+  }
+
+  .banner-content {
+    border: 0px;
+  }
+
+  p{
+    color: white;
+    opacity: 0.8;
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .btn {
+    padding: 15px 50px;
+    border-radius: 3px;
+  }
+
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 17px;
+  padding-top: 20px;
+  padding-right:20px;
+  padding-left: 20px;
+  }
+
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.card-trips > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trips h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trips h3 {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trips .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 15px;
+  top: -40px;
+  width: 60px;
+}
+
+
+.footer {
+  bottom:0;
+  left:0;
+
+    width: 100%;
+    height: 1em;
+    overflow:hidden;
+    margin:0 auto;
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+  z-index:999;
+}
+
+.footer {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  font-family: 'Amarante';
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
