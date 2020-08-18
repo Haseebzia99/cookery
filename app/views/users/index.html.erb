@@ -1,0 +1,8 @@
+<div>
+<h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
+<% @chefs.each do |chef| %>
+<h2><%= chef.first_name %></h2>
+<h3><%= chef.postcode %> <%= '🏡' %></h3>
+<%= link_to "Sounds yum to me!", user_path(chef) %>
+<% end  %>
+</div>
