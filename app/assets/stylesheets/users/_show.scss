@@ -23,25 +23,24 @@
 
 .card-trip > img {
   padding-top: 30px;
-  height: 470px;
-  width: 40%;
+  height: 300px;
+  width: 20%;
   border-radius: 50%;
 }
 
-.description {
-  height:300px;
-}
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 50px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 40px;
   opacity: .7;
   margin: 0;
+  text-align: center;
 }
 
 
@@ -51,6 +50,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-align: center;
 }
 
 .card-trip-infos .card-trip-user {
@@ -58,4 +58,18 @@
   right: 16px;
   top: -20px;
   width: 40px;
+  text-align: center;
 }
+
+
+.form {
+
+text-align: center;
+margin-top: 40px;
+}
+
+.text {
+margin-top: 50px;
+}
+
+

@@ -22,6 +22,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= chef.first_name %></h2>
+          <h3><%= chef.cuisine %></h3>
           <h3><%= chef.postcode %> <%= '🏡' %></h3>
         </div>
           <%= link_to "Book Me", user_path(chef), class: 'btn btn-primary' %>
