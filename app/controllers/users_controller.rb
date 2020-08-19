@@ -18,9 +18,15 @@ class UsersController < ApplicationController
 
   def update
     @chef = current_user
-    @chef.cuisine = params[:user][:cuisine]
-    @chef.save
-    redirect_to profile_path(@chef)
+    if @chef.update(chef_params)
+      redirect_to profile_path(@chef)
+    else 
+      render :edit
+    end
   end
 
+
+  def chef_params
+  params.require(:user).permit(:cuisine, :photo, :chef_photo)
+  end
 end
