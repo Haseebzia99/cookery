@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
+<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon ">
   <a class="navbar-brand d-flex align-items-center" href="#">
     <img src="https://www.pinclipart.com/picdir/big/400-4002708_chef-hat-clip-art-chef-hat-svg-free.png" />
     <h5 class="my-0 ml-1">Cookery</h5>
@@ -36,6 +36,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.chef %>
               <a class="dropdown-item" href="#">Chef Action</a>
+              <%= link_to 'Add Cuisine', edit_user_path(current_user), class: 'dropdown-item' %>
             <% else %>
               <a class="dropdown-item" href="#">User action</a>
             <% end %>
