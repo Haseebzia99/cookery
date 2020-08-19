@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :bookings
 
   end
+  get 'users/:id/profile', to: 'users#profile', as: :profile
 end
