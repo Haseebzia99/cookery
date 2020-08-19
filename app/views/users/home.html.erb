@@ -1,19 +1,21 @@
 <div>
-  <div class='banner'>
-    <div class = 'title'>
-      <h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
-    </div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png')">
+  <div class="container">
+    <h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
     <div class="search_bar">
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search" id="search_query" />
           <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
+            <i class="fas fa-search"></i>
           </button>
         </div>
       <% end %>
     </div>
   </div>
+</div>
+</div>
+
 
   <div class='card-grid'>
   <% @chefs.each do |chef| %>
