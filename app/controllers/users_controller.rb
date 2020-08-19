@@ -8,20 +8,19 @@ class UsersController < ApplicationController
     @chef = User.find(params[:id])
   end
 
+  def profile
+    @chef = current_user
+  end
+
   def edit
     @chef = current_user
   end
 
   def update
     @chef = current_user
-    @chef.update(strong_params)
+    @chef.cuisine = params[:user][:cuisine]
+    @chef.save
     redirect_to user_path(@chef)
-  end
-
-  private
-
-  def strong_params
-    require(:user).permit(:cuisine, :description, :postcode)
   end
 
 end

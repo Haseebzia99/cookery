@@ -2,6 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-6">
 
+      <h1>Add/Update Cuisine</h1>
+      <%= simple_form_for current_user do |c| %>
+        <%= c.input :cuisine %>
+        <%= c.submit class: 'btn btn-dark' %>
+      <% end %>
+
     </div>
   </div>
 </div>
