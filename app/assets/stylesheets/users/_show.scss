@@ -30,18 +30,21 @@
 
 .description {
   height:300px;
+  text-align: center;
 }
 
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-align: center;
 }
 
 
@@ -51,6 +54,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-align: center;
 }
 
 .card-trip-infos .card-trip-user {
@@ -58,4 +62,5 @@
   right: 16px;
   top: -20px;
   width: 40px;
+  text-align: center;
 }
