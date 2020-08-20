@@ -6,10 +6,13 @@ class UsersController < ApplicationController
 
   def show
     @chef = User.find(params[:id])
+    @booking = Booking.new
   end
 
   def profile
     @chef = current_user
+    @bookings = Booking.where(chef_id: current_user[:id])
+    @bookings_user = Booking.where(user_id: current_user[:id])
   end
 
   def edit

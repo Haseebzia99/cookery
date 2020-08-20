@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-
       <h1>Add/Update Cuisine</h1>
+
       <%= simple_form_for current_user do |f| %>
         <%= f.input :cuisine %>
         <%= f.input :biography, as: :text, input_html: {rows: 10, cols: 10} %>
@@ -12,8 +12,10 @@
           
         </div>
         <%= f.submit class: 'btn btn-dark' %>
-      <% end %>
 
+        <%= link_to "Back", profile_path(current_user), class: 'btn btn-primary'  %>
+
+      <% end %>
     </div>
   </div>
 </div>

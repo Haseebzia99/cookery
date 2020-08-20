@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(strong_params)
+    @booking.chef = User.find(params[:user_id])
+    @booking.user = current_user
     if @booking.save
       redirect_to root_path
     else
@@ -12,9 +14,16 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.delete
+    flash[:notice] = "Your booking has been deleted"
+    redirect_to profile_path(current_user)
+  end
+
   private
 
   def strong_params
-    require(:booking).permit(:chef_id, :description, :date)
+   params.require(:booking).permit(:user_id, :description, :postcode, :date)
   end
 end
