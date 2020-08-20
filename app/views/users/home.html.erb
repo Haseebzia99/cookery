@@ -1,44 +1,43 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80')">
-  <div class="container">
-    <h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
-    <div class="search_bar">
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i>
-          </button>
+    <div class="container">
+      <h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
+        <div class="search_bar">
+          <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+            <div class="search-form-control form-group">
+              <input class="form-control string required" type="text" name="search" id="search_query" />
+              <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          <% end %>
+        </div>
+          <div class="banner-text" >
+            <h2> Hire a chef for at home or on holiday</h2>
+            <h3>Browse our gourmet menus below prepared, cooked & served for you<h3>
+          </div>
+    </div>
+  </div>
+  
+
+
+  <div class="card-display-background">
+    <div class='card-grid'>
+      <% @chefs.each do |chef| %>
+        <div class="card-trips">
+          <%= image_tag("indian.jpg") %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= chef.first_name %></h2>
+                <h3><%= chef.cuisine %></h3>
+                <h3><%= chef.postcode %> <%= '🏡' %></h3>
+                <%= link_to "Book Me", user_path(chef), class: 'btn btn-primary' %>
+              </div>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
         </div>
       <% end %>
     </div>
-            <h2> Hire a chef for at home or on holiday</h2>
-            <h3>Browse our gourmet menus below prepared, cooked & served for you</h3>
   </div>
-</div>
-</div>
-
-
-
-
-
-
-
-  <div class='card-grid'>
-  <% @chefs.each do |chef| %>
-    <div class="card-trips">
-      <%= image_tag("indian.jpg") %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= chef.first_name %></h2>
-          <h3><%= chef.cuisine %></h3>
-          <h3><%= chef.postcode %> <%= '🏡' %></h3>
-        </div>
-          <%= link_to "Book Me", user_path(chef), class: 'btn btn-primary' %>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
-   <% end %>
- </div>
 
 </div>
