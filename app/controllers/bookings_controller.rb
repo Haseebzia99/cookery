@@ -14,6 +14,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.delete
+    flash[:notice] = "Your booking has been deleted"
+    redirect_to profile_path(current_user)
+  end
+
   private
 
   def strong_params
