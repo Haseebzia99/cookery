@@ -5,13 +5,12 @@
   <div class="card-trip">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     <div class="card-trip-infos">
+      <div class='description'>
+        <h2>Title here</h2>
+        <p>Short description here!</p>
+        <h2><%= @chef.email %><%= '📧' %></h2>
+      </div>
     </div>
-
-<div class='text'>
-  <h2>Title here</h2>
-  <p>Short description here!</p>
-  <h2><%= @chef.email %><%= '📧' %></h2>
-</div>
 
 <div class='form'>
 
@@ -45,6 +44,8 @@
 
 <div class='home'>
   <%= link_to 'Go back to homepage', root_path, class: 'btn btn-primary'%>
+</div>
+
 </div>
 
 </div>

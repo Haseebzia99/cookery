@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @chef = current_user
     @chef.cuisine = params[:user][:cuisine]
     @chef.save
-    redirect_to user_path(@chef)
+    redirect_to profile_path(@chef)
   end
 
 end
