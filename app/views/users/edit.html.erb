@@ -5,10 +5,13 @@
       <h1>Add/Update Cuisine</h1>
       <%= simple_form_for current_user do |f| %>
         <%= f.input :cuisine %>
-        <%= f.input :photo, as: :file %>
-        <%= f.input :chef_photo, as: :file %>
+        <%= f.input :biography, as: :text, input_html: {rows: 10, cols: 10} %>
+        <div class="photo-upload">
+          <%= f.input :photo, as: :file %>
+          <%= f.input :chef_photo, as: :file %>
+          
+        </div>
         <%= f.submit class: 'btn btn-dark' %>
-        
       <% end %>
 
     </div>
