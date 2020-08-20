@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-
       <h1>Add/Update Cuisine</h1>
       <%= simple_form_for current_user do |c| %>
         <%= c.input :cuisine %>
+        <%= c.input :chef_photo, as: :file %>
+        <%= f.input :photo, as: :file %>
         <%= c.submit class: 'btn btn-dark' %>
         <%= link_to "Back", profile_path(current_user), class: 'btn btn-primary'  %>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -12,21 +12,10 @@
     <ul class="navbar-nav mr-auto">
 
 
-      <div class="search_bars">
-        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-          <div class="search-form-control form-group">
-            <input class="form-control string required" type="text" name="search" id="search_query" />
-            <button name="button" type="submit" class="btn btn-flat">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        <% end %>
-      </div>
-
-
+    
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: 'nav-link' %>
+          <%= link_to "Home", root_path, class: 'nlhome nav-link' %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"></a>
