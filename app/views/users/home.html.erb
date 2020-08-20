@@ -13,8 +13,8 @@
           <% end %>
         </div>
           <div class="banner-text" >
-            <h2> Hire a chef for at home or on holiday</h2>
-            <h3>Browse our gourmet menus below prepared, cooked & served for you<h3>
+            <h2> Hire a chef for your special occasion</h2>
+            <h3>Browse our gourmet offerings below: Prepared, Cooked & Served for you<h3>
           </div>
     </div>
   </div>
@@ -25,15 +25,21 @@
     <div class='card-grid'>
       <% @chefs.each do |chef| %>
         <div class="card-trips">
-          <%= image_tag("indian.jpg") %>
+          <!--<%= image_tag("indian.jpg") %>-->
+          <% if chef.chef_photo.attached? %>
+          <%= cl_image_tag chef.chef_photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= chef.first_name %></h2>
                 <h3><%= chef.cuisine %></h3>
                 <h3><%= chef.postcode %> <%= '🏡' %></h3>
-                <%= link_to "Book Me", user_path(chef), class: 'btn btn-primary' %>
+                <%= link_to "Book Me", user_path(chef), class: 'btn btn-dark' %>
               </div>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <!--<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />-->
+              <% if chef.photo.attached? %>
+              <%= cl_image_tag chef.photo.key, class: "card-trip-user avatar-bordered" %>
+              <% end %>
             </div>
         </div>
       <% end %>
@@ -41,3 +47,4 @@
   </div>
 
 </div>
+
