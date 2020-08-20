@@ -11,6 +11,7 @@
   background-position: center;
   padding: 150px 0;
   height: 70vh;
+  margin-top: -40px; //This is a provisional fix for covering the grey space at the top of banner. If someone finds the cause of this problem, please amend this.
 }
 
 .banner h1 {

@@ -16,10 +16,9 @@
     </div>
 
   <% if current_user.chef == false %>
-
   <div class='form'>
 
-    <div class="form-group row">
+    <%# <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label"><strong>Postcode</strong></label>
       <div class="col-10">
         <input class="form-control" type="text" value="XXX XXX" id="example-text-input">
@@ -38,11 +37,17 @@
       <div class="col-10">
         <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
       </div>
-    </div>
+    </div> %>
+  
+    <%= simple_form_for [@chef, @booking] do |f| %>
+      <%= f.input :postcode %>
+      <%= f.input :description %>
+      <%= f.input :date, as: :string, input_html: {type: :date}%>
+      <%= f.submit "Book!", class: "btn btn-primary" %>
+    <% end %>
 
-  <div class='bookbutton'>
-    <%= link_to "Book Me", user_path, class: 'btn btn-danger' %>
-    </div>
+
+ 
     <% end %>
 
     <div class='home'>
