@@ -5,12 +5,10 @@
           <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
-          <% if current_user.chef_photo.attached? %>
-          <%= cl_image_tag current_user.chef_photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
           <div class="card-product-infos">
             <h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
             <p>Email: <%= current_user.email %></p>
+
             <% if current_user.chef %>
               <h2>Cuisine: <%= current_user.cuisine %></h2>
             <%= link_to 'Add/Update Cuisine', edit_user_path(current_user), class: 'btn btn-primary', id: 'addbutton'%>
@@ -20,6 +18,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <% if current_user.chef %>
@@ -51,3 +50,4 @@
     </div>
   </div>
 <% end %>
+

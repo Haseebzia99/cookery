@@ -21,11 +21,19 @@
           <a class="nav-link" href="#"></a>
         </li>
         <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+          
+          <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: {toggle: "dropdown"}, 
+          aria: {haspopup: "true", expanded: "false"} %>
+          <% else %>
+          <img class="avatar-bordered dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://devtalk.blender.org/uploads/default/original/2X/c/cbd0b1a6345a44b58dda0f6a355eb39ce4e8a56a.png" />
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to 'My Profile', profile_path(current_user), class: 'dropdown-item' %>
             <% if current_user.chef %>
-              <%= link_to 'Add/Update Cuisine', edit_user_path(current_user), class: 'dropdown-item' %>
+              <%= link_to 'My Profile', profile_path(current_user), class: 'dropdown-item' %>
+              <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: 'dropdown-item' %>
+
             <% else %>
               <a class="dropdown-item" href="#">User action</a>
             <% end %>

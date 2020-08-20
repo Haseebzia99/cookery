@@ -3,31 +3,52 @@
   <h1> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, welcome to my cuisine</h1>
 
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% if @chef.photo.attached? %>
+          <%= cl_image_tag @chef.photo.key, height: 300, width: 300, crop: :fill %>
+          <% end %>
+          
     <div class="card-trip-infos">
       <div class='description'>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
+        <h2><%= @chef.first_name %> <%= @chef.last_name %></h2>
+        <p><%= @chef.biography %></p>
         <h2><%= @chef.email %><%= '📧' %></h2>
       </div>
     </div>
 
-    <%= simple_form_for [@chef, @booking] do |f| %>
-      <%= f.input :postcode %>
-      <%= f.input :description %>
-      <%= f.input :date, as: :string, input_html: {type: :date}%>
-      <%= f.submit "Book!", class: "btn btn-primary" %>
-    <% end %>
+  <% if current_user.chef == false %>
 
+  <div class='form'>
 
-    <div class='bookbutton'>
-      <%= link_to "Book Me", user_path, class: 'btn btn-danger' %>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label"><strong>Postcode</strong></label>
+      <div class="col-10">
+        <input class="form-control" type="text" value="XXX XXX" id="example-text-input">
+      </div>
     </div>
+
+    <div class="form-group row">
+      <label for="example-search-input" class="col-2 col-form-label"><strong>Description</strong></label>
+      <div class="col-10">
+        <input class="form-control" type="search" value="Party" id="example-search-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label"><strong>Date</strong></label>
+      <div class="col-10">
+        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+      </div>
+    </div>
+
+  <div class='bookbutton'>
+    <%= link_to "Book Me", user_path, class: 'btn btn-danger' %>
+    </div>
+    <% end %>
 
     <div class='home'>
       <%= link_to 'Go back to homepage', root_path, class: 'btn btn-primary'%>
     </div>
-
-  </div>
+  
+    </div>
 
 </div>

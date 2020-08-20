@@ -30,6 +30,6 @@ class UsersController < ApplicationController
 
 
   def chef_params
-  params.require(:user).permit(:cuisine, :photo, :chef_photo)
+  params.require(:user).permit(:cuisine, :photo, :chef_photo, :biography)
   end
 end
