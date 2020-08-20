@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @chef = User.find(params[:id])
+    @booking = Booking.new
   end
 
   def profile
