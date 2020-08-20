@@ -11,10 +11,43 @@
           <div class="card-product-infos">
             <h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
             <p>Email: <%= current_user.email %></p>
-            <p>Cuisine: <%= current_user.cuisine %></p>
+            <% if current_user.chef %>
+              <h2>Cuisine: <%= current_user.cuisine %></h2>
+            <%= link_to 'Add/Update Cuisine', edit_user_path(current_user), class: 'btn btn-primary', id: 'addbutton'%>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+
+<% if current_user.chef %>
+  <div>
+  <h1> <%= @chef.first_name %> bookings</h1>
+  <% @bookings.each do |booking| %>
+    <div class="books">
+        <div class="books-infos">
+          <h2><%= booking.description %></h2>
+          <h2><%= booking.date.strftime("%d/%m/%Y") %></h2>
+          <h2><%= booking.postcode %></h2>
+          <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div>
+  <h1> <%= current_user.first_name %> bookings</h1>
+  <% @bookings_user.each do |booking| %>
+    <div class="books">
+        <div class="books-infos">
+          <h2><%= booking.description %></h2>
+          <h2><%= booking.date.strftime("%d/%m/%Y") %></h2>
+          <h2><%= booking.postcode %></h2>
+          <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
