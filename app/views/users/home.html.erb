@@ -1,7 +1,7 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80')">
     <div class="container">
-      <h1 class="sb-title"> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
+      <h1 class="sb-title"> Look for your favourite <em id='cuisines'>cuisine</em> below! 👨‍🍳 </h1>
           <div class ='search_bar'>
             <%= form_tag root_path, method: :get do %>
                 <%= text_field_tag :query,
@@ -9,7 +9,7 @@
                   class: "form-control",
                   placeholder: "Find a cuisine"%>
                   <%= button_tag type: 'submit', class: "button postfix" do %>
-                   <i class="fa fa-search"  aria-hidden="true"></i>
+                   <i class="fa fa-search" aria-hidden="true"></i>
                   <% end %>
               <% end %>
           </div>
@@ -35,8 +35,8 @@
           <% end %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= chef.first_name %></h2>
-                <h3><%= chef.cuisine %></h3>
+                <h2><%= chef.cuisine %></h2>
+                <h3><%= chef.first_name %></h3>
                 <h3><%= chef.postcode %> </h3>
                 <%= link_to "Book Me", user_path(chef), class: 'btn btn-dark' %>
               </div>
