@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-6">
-      <h1>Add/Update Cuisine</h1>
+    <div class="col-6 mt-3">
 
+      <h1 class="h1-tag">Edit Your Profile</h1>
+      <div class="edit-form-style">
       <%= simple_form_for current_user do |f| %>
       <% if current_user.chef %>
         <%= f.input :cuisine %>
@@ -11,7 +12,7 @@
           <%= f.input :photo, as: :file %>
           <%= f.input :chef_photo, as: :file %>
         </div>
-      <% else %>    
+      <% else %>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :postcode %>
@@ -21,8 +22,8 @@
         </div>
       <% end %>
         <%= f.submit class: 'btn btn-dark' %>
-
-        <%= link_to "Back", profile_path(current_user), class: 'btn btn-primary'  %>
+      </div>
+        <%= link_to "Back", profile_path(current_user), class: 'btn btn-secondary mt-3'  %>
 
       <% end %>
     </div>
