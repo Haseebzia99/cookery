@@ -27,7 +27,7 @@
     <div class="books">
         <div class="books-infos">
           <h2><%= booking.description %></h2>
-          <h2><%= booking.date.strftime("%d/%m/%Y") %></h2>
+          <h2><%= booking.date&.strftime("%d/%m/%Y") %></h2>
           <h2><%= booking.postcode %></h2>
           <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
         <% end %>
@@ -41,7 +41,7 @@
     <div class="books">
         <div class="books-infos">
           <h2><%= booking.description %></h2>
-          <h2><%= booking.date.strftime("%d/%m/%Y") %></h2>
+          <h2><%= booking.date&.strftime("%d/%m/%Y") %></h2>
           <h2><%= booking.postcode %></h2>
           <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
         <% end %>

@@ -30,13 +30,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to 'My Profile', profile_path(current_user), class: 'dropdown-item' %>
-            <% if current_user.chef %>
-              
-              <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: 'dropdown-item' %>
-
-            <% else %>
-              <a class="dropdown-item" href="#">User action</a>
-            <% end %>
+            <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: 'dropdown-item' %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </li>
