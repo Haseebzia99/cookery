@@ -2,24 +2,28 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80')">
     <div class="container">
       <h1 class="sb-title"> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
-        <div class="search_bar">
-          <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <div class="search-form-control form-group">
-              <input class="form-control string required" type="text" name="search" id="search_query" />
-              <button name="button" type="submit" class="btn btn-flat">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          <% end %>
-        </div>
+          <div class ='search_bar'>
+            <%= form_tag root_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find a cuisine"%>
+                  <%= button_tag type: 'submit', class: "button postfix" do %>
+                   <i class="fa fa-search"  aria-hidden="true"></i>
+                  <% end %>
+              <% end %>
+          </div>
           <div class="banner-text" >
             <h2 class="fp-big-text"> Hire a chef for your special occasion</h2>
             <h3>Browse our gourmet offerings below: <strong>Prepared, Cooked & Served</strong> for you<h3>
           </div>
     </div>
   </div>
-  
 
+  <div class="banner-text" >
+    <% @chefs.each do |chef| %>
+    <% chef.cuisine %>
+  <% end %>
 
   <div class="card-display-background">
     <div class='card-grid'>
