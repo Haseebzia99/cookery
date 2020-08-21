@@ -22,30 +22,34 @@
 
 <% if current_user.chef %>
   <div>
-  <h1> <%= @chef.first_name %> bookings</h1>
-  <% @bookings.each do |booking| %>
-    <div class="books">
-        <div class="books-infos">
-          <h2><%= booking.description %></h2>
-           <h2><%= booking.date&.strftime("%d/%m/%Y") %></h2>
-            <h2><%= booking.postcode %></h2>
-          <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+    <h1 class = "row justify-content-center mt-3 booking-header"> <%= @chef.first_name %>'s bookings</h1>
+    <div class="m-5 display-booking-container">
+      <% @bookings.each do |booking| %>
+        <div class="books p-5 m-2 display-booking">
+            <div class="books-infos">
+              <h2><u>Description:</u> <%= booking.description %></h2>
+              <h2><u>Date:</u> <%= booking.date.strftime("%d/%m/%Y") %></h2>
+              <h2><u>Location:</u> <%= booking.postcode %></h2>
+            </div>
+            <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary delete-booking-button' %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% else %>
   <div>
-  <h1> <%= current_user.first_name %> bookings</h1>
-  <% @bookings_user.each do |booking| %>
-    <div class="books">
-        <div class="books-infos">
-          <h2><%= booking.description %></h2>
-          <h2><%= booking.date&.strftime("%d/%m/%Y") %></h2>
-          <h2><%= booking.postcode %></h2>
-          <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+    <h1 class="row justify-content-center mt-3 booking-header"> <%= current_user.first_name %>'s bookings</h1>
+    <div class="m-5 display-booking-container">
+      <% @bookings_user.each do |booking| %>
+        <div class="books p-5 m-2 display-booking" >
+            <div class="books-infos">
+              <h2><u>Description:</u> <%= booking.description %></h2>
+              <h2><u>Date:</u> <%= booking.date.strftime("%d/%m/%Y") %></h2>
+              <h2><u>Location:</u> <%= booking.postcode %></h2>
+            </div>
+            <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary delete-booking-button' %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
