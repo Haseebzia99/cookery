@@ -1,7 +1,7 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80')">
     <div class="container">
-      <h1> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
+      <h1 class="sb-title"> Look for your local <strong>Chef</strong> below! 👨‍🍳 </h1>
         <div class="search_bar">
           <%= simple_form_for :search, url: root_path, method: :get do |f| %>
             <div class="search-form-control form-group">
@@ -13,8 +13,8 @@
           <% end %>
         </div>
           <div class="banner-text" >
-            <h2> Hire a chef for your special occasion</h2>
-            <h3>Browse our gourmet offerings below: Prepared, Cooked & Served for you<h3>
+            <h2 class="fp-big-text"> Hire a chef for your special occasion</h2>
+            <h3>Browse our gourmet offerings below: <strong>Prepared, Cooked & Served</strong> for you<h3>
           </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
               <div>
                 <h2><%= chef.first_name %></h2>
                 <h3><%= chef.cuisine %></h3>
-                <h3><%= chef.postcode %> <%= '🏡' %></h3>
+                <h3><%= chef.postcode %> </h3>
                 <%= link_to "Book Me", user_path(chef), class: 'btn btn-dark' %>
               </div>
               <!--<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />-->
