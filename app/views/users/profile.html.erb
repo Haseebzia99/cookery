@@ -1,4 +1,5 @@
 <div class="container mt-3">
+<h1 class='deep'> My Profile </h1>
   <div class="row justify-content-center">
     <div class="col-6">
         <div class="card-product">
@@ -37,7 +38,7 @@
   </div>
 <% else %>
   <div>
-    <h1 class="row justify-content-center mt-3 booking-header"> <%= current_user.first_name %>'s bookings</h1>
+    <h2 class="row justify-content-center mt-1 booking-header"> <%= current_user.first_name %>'s bookings:</h2>
     <div class="m-5 display-booking-container">
       <% @bookings_user.each do |booking| %>
         <div class="books p-5 m-2 display-booking" >
