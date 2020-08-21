@@ -1,32 +1,39 @@
 <div class='container'>
-  <div><h1 class="showpage-h1"> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, Welcome to my cuisine</h1>
+  <div><h1 class="showpage-h1"> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, Welcome to my cuisine...</h1>
   </div>
     <div class="card-trip">
       <% if @chef.photo.attached? %>
         <%= cl_image_tag @chef.photo.key, crop: :fill %>
       <% end %>
-    <div class="card-trip-infos">
-      <div class='description'>
-        <h2><%= @chef.first_name %> <%= @chef.last_name %></h2>
-        <p><%= @chef.biography %></p>
-        <h2><%= @chef.email %><%= '📧' %></h2>
+      <div class="card-trip-infos">
+        <div class='description'>
+          <h2><%= @chef.first_name %> <%= @chef.last_name %></h2>
+          <h3><%= @chef.email %><%= '📧' %></h3>
+          <div class="biography" mt-3><p><%= @chef.biography %></p></div>
+        </div>
       </div>
-    </div>
 
-  <% if current_user.chef == false %>
-    <div class='form'>
-      <%= simple_form_for [@chef, @booking] do |f| %>
-        <%= f.input :postcode %>
-        <%= f.input :description %>
-        <%= f.input :date, as: :string, input_html: {type: :date}%>
-        <%= f.submit "Book!", class: "btn btn-primary" %>
+      <% if current_user.chef == false %>
+
+        <div class="form-profile">
+          <div class="additional-form-div">
+            <div class="form-p-tag mt-3"> <p>If you would like to book my services, please provide some details</p></div>
+
+            <%= simple_form_for [@chef, @booking], html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+              <%= f.input :postcode %>
+              <%= f.input :description %>
+              <%= f.input :date, as: :string, input_html: {type: :date}%>
+              <%= f.submit "Book Me!", class: "btn btn-dark mb-3" %>
+            <% end %>
+          </div>
+        </div>
+        <div class='home'>
+            <%= link_to 'Go back to homepage', root_path, class: 'btn btn-dark mb-3'%>
+        </div>
       <% end %>
-  <% end %>
+    </div>
 
-    <div class='home'>
-      <%= link_to 'Go back to homepage', root_path, class: 'btn btn-dark'%>
-    </div>
-    </div>
+
 </div>
 
 <%# <div class="form-group row">
