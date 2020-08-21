@@ -8,6 +8,10 @@ class User < ApplicationRecord
   scope :chefs, -> { where(chef: true) }
   has_one_attached :photo
   has_one_attached :chef_photo
+  include PgSearch::Model
+   pg_search_scope :search_by_cuisine,
+      against: [:cuisine],
+      using: {
+        tsearch: { prefix: true }
+      }
 end
-
-#you can call chef_bookings anything you want

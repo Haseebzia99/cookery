@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def home
-    @chefs = User.chefs
+    if params[:query].present?
+     @chefs = User.search_by_cuisine(params[:query])
+    else
+      @chefs = User.chefs
+    end
   end
 
   def show
