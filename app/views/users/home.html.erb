@@ -36,8 +36,7 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= chef.cuisine %></h2>
-                <h3><%= chef.first_name %></h3>
-                <h3><%= chef.postcode %> </h3>
+                <h3><%= chef.first_name %> <%= chef.last_name %></h3>
                 <%= link_to "Book Me", user_path(chef), class: 'btn btn-dark' %>
               </div>
               <!--<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />-->
