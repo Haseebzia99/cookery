@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def home
-    @chefs = User.chefs
+    if params[:query].present?
+     @chefs = User.search_by_cuisine(params[:query])
+    else
+      @chefs = User.chefs
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class UsersController < ApplicationController
     @chef = current_user
     if @chef.update(chef_params)
       redirect_to profile_path(@chef)
-    else 
+    else
       render :edit
     end
   end
