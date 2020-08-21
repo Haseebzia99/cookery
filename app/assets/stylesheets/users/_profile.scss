@@ -1,11 +1,13 @@
 .card-product {
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   overflow: hidden;
   height: 170px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
 }
 
 .card-product img {
@@ -52,4 +54,9 @@
   border: 1px black;
   margin-top: 10px;
 
+}
+
+.deep {
+  color: black;
+  margin-top: 10px;
 }
