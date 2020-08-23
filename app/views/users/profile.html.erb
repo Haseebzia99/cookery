@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<h1 class='deep'> My Profile </h1>
+<h1 class='profile-text'> My Profile </h1>
   <div class="row justify-content-center">
     <div class="col-6">
         <div class="card-product">
@@ -9,10 +9,10 @@
           <div class="card-product-infos">
             <h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
             <p>Email: <%= current_user.email %></p>
-
+            <p>Biography: <%= current_user.biography %></p>
             <% if current_user.chef %>
               <h2>Cuisine: <%= current_user.cuisine %></h2>
-            <%= link_to 'Add/Update Cuisine', edit_user_path(current_user), class: 'btn btn-primary', id: 'addbutton'%>
+            <%= link_to 'Update Cuisine', edit_user_path(current_user), class: 'btn btn-dark', id: 'addbutton'%>
             <% end %>
           </div>
         </div>
@@ -31,7 +31,7 @@
               <h2><u>Date:</u> <%= booking.date.strftime("%d/%m/%Y") %></h2>
               <h2><u>Location:</u> <%= booking.postcode %></h2>
             </div>
-            <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary delete-booking-button' %>
+            <%= link_to 'Cancel', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-dark delete-booking-button' %>
         </div>
       <% end %>
     </div>
@@ -43,11 +43,12 @@
       <% @bookings_user.each do |booking| %>
         <div class="books p-5 m-2 display-booking" >
             <div class="books-infos">
+              <h2><u>Chef:</u> <%= booking.chef.first_name %> <%= booking.chef.last_name %></h2>
               <h2><u>Description:</u> <%= booking.description %></h2>
               <h2><u>Date:</u> <%= booking.date.strftime("%d/%m/%Y") %></h2>
               <h2><u>Location:</u> <%= booking.postcode %></h2>
             </div>
-            <%= link_to 'delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-primary delete-booking-button' %>
+            <%= link_to 'Cancel', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-dark delete-booking-button' %>
         </div>
       <% end %>
     </div>
