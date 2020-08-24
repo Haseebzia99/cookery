@@ -10,10 +10,7 @@
             <h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
             <p>Email: <%= current_user.email %></p>
             <p>Biography: <%= current_user.biography %></p>
-            <% if current_user.chef %>
-              <h2>Cuisine: <%= current_user.cuisine %></h2>
-            <%= link_to 'Update Cuisine', edit_user_path(current_user), class: 'btn btn-dark', id: 'addbutton'%>
-            <% end %>
+            <h2>Cuisine: <%= current_user.cuisine %></h2>
           </div>
         </div>
     </div>
@@ -22,7 +19,7 @@
 
 <% if current_user.chef %>
   <div>
-    <h1 class = "row justify-content-center mt-3 booking-header"> <%= @chef.first_name %>'s bookings</h1>
+    <h1 class = "row justify-content-center mt-3 booking-header raleway"> Client appointments:</h1>
     <div class="m-5 display-booking-container">
       <% @bookings.each do |booking| %>
         <div class="books p-5 m-2 display-booking">
@@ -38,7 +35,7 @@
   </div>
 <% else %>
   <div>
-    <h2 class="row justify-content-center mt-1 booking-header"> <%= current_user.first_name %>'s bookings:</h2>
+    <h2 class="row justify-content-center mt-3 booking-header"> <%= current_user.first_name %>'s bookings:</h2>
     <div class="m-5 display-booking-container">
       <% @bookings_user.each do |booking| %>
         <div class="books p-5 m-2 display-booking" >
