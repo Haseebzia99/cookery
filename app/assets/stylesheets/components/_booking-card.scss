@@ -6,6 +6,12 @@ justify-content: center;
 .display-booking-container {
   display: flex;
   justify-content:center;
+  flex-wrap: wrap;
+
+}
+
+.display-booking-container>div {
+  flex: 0 40%;
 }
 
 .delete-booking-button {

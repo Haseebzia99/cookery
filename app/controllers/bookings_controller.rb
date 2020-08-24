@@ -26,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def strong_params
-  params.require(:booking).permit(:user_id, :description, :postcode, :date)
+  params.require(:booking).permit(:user_id, :description, :postcode, :date, :chef_id)
   end
 end

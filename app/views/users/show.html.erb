@@ -1,7 +1,7 @@
 <div class='container'>
-  <div><h1 class="showpage-h1"> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, Welcome to my cuisine...</h1>
+  <div><h1 class="showpage-h1 mt-4"> Hi I'm <%= @chef.first_name %> <%= @chef.last_name %>, I would love to hear more from you...</h1>
   </div>
-    <div class="card-trip">
+    <div class="card-trip mb-5">
       <% if @chef.photo.attached? %>
         <%= cl_image_tag @chef.photo.key, crop: :fill %>
       <% end %>
@@ -17,7 +17,7 @@
 
         <div class="form-profile">
           <div class="additional-form-div">
-            <div class="form-p-tag mt-3"> <p>If you would like to book my services, please provide some details</p></div>
+            <div class="form-p-tag mt-3"> <p>If you would like to book my services, please provide some details:</p></div>
 
             <%= simple_form_for [@chef, @booking], html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
               <%= f.input :postcode %>
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class='home'>
-            <%= link_to 'Go back to homepage', root_path, class: 'btn btn-dark mb-3'%>
+            <%= link_to 'Go back to homepage', root_path, class: 'btn btn-secondary mb-3'%>
         </div>
       <% end %>
     </div>
