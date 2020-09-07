@@ -23,9 +23,12 @@ body{
 
 #main-container {
   min-height: 100%;
+  margin-bottom: 60px;
+  overflow-x: hidden;
 }
 #main-main {
   overflow: auto;
+  overflow-x: hidden;
 
 }
 
